@@ -2,7 +2,7 @@ from ez_setup import use_setuptools
 use_setuptools()
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
-import vturra-cli
+import vturra
 import sys
 class PyTest(TestCommand):
     def finalize_options(self):
@@ -15,8 +15,8 @@ class PyTest(TestCommand):
         errcode = pytest.main(self.test_args)
         sys.exit(errcode)
 
-setup(name="vturra-cli",
-    version=vturra-cli.__version__,
+setup(name="vturra",
+    version=vturra.__version__,
     license='Apache Software License',
     tests_require=['pytest'],
     install_requires=['matplotlib>=1.2.1',
@@ -32,12 +32,12 @@ setup(name="vturra-cli",
     long_description=open('README.md').read(),
     author="Muhammed Thaha",
     author_email='mthaha1989@gmail.com',
-    download_url='https://github.com/stormvirux/vturra-cli',
+    download_url='https://github.com/stormvirux/vturra',
     packages=find_packages(exclude='tests'),
-    package_data={'vturra-cli': ['data/*.xml']},
+    package_data={'vturra': ['data/*.xml']},
     include_package_data=True,
     platforms='any',
-    test_suite='vturra-cli.test.test_vturra-cli',
+    test_suite='vturra.test.test_vturra',
     classifiers = [
         'Programming Language :: Python',
         'Development Status :: 1 - Beta',
@@ -53,7 +53,7 @@ setup(name="vturra-cli",
     },
     entry_points={
         "console_scripts": [
-            "vturra-cli=vturra-cli.rra:main"
+            "vturra=vturra.rra:main"
             #"pip%s=pip:main" % sys.version[:1],
             #"pip%s=pip:main" % sys.version[:3],
         ],
