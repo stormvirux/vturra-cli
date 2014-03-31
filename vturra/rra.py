@@ -20,7 +20,16 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-# 
+#
+usn=""
+usnl=[]
+from bs4 import BeautifulSoup 
+import re
+import asys
+import glob
+import os
+import sys
+import sys 
 def inputIndex():
 	import codecs
 	x=0
@@ -89,7 +98,7 @@ def ret():
 	x=0
 	year=sys.argv[1]
 	branches=sys.argv[2]
-	for rno in range(1,120):
+	for rno in range(1,12):
 		usn="4pa"+year+branches+"%03d"%rno
 		payload={'rid':usn,'submit':'submit'}
 		r=requests.post("http://results.vtu.ac.in/vitavi.php/post",data=payload)
@@ -104,20 +113,15 @@ def main():
 	ret()
 	parsehtml()
 	getval()
+	asys.Compavg()
+	asys.compSub()
 	return 0
 
+
 if __name__ == '__main__':
-	usn=""
-	usnl=[]
-	from bs4 import BeautifulSoup 
-	import re
-    import asys
-	import glob
-	import os
-	import sys
 	inputIndex()
 	main()
 	asys.Compavg()
-    asys.compSub()
+    	asys.compSub()
 
 #TODO:Names of those whose result has not come out

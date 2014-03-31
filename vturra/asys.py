@@ -14,6 +14,7 @@ sns.set_color_palette("deep", desat=.6)
 mpl.rc("figure", figsize=(8, 4))
 
 def Compavg():
+	data=Total()
 	markMax=[]
 	markAvg=[]
 	N = 5
@@ -39,7 +40,8 @@ def Compavg():
 def compSub():
 	#max_data = np.r_[data["Total"]].max()
 	#bins = np.linspace(0, max_data, max_data + 1)
-	plt.hist(data["Total"],linewidth=0, alpha=.7)
+	data=Total()
+	plt.hist(data['Total'],linewidth=0, alpha=.7)
 	plt.hist(data['Total.1'],linewidth=0,alpha=.7)
 	plt.hist(data['Total.2'],linewidth=0,alpha=.7)
 	plt.hist(data['Total.3'],linewidth=0,alpha=.7)
@@ -49,10 +51,13 @@ def compSub():
 	plt.ylabel("Frequency")
 	plt.show()
 
-data=pd.read_csv("output11cs.csv")
-df3=data[['Total','Total.1','Total.2','Total.3','Total.4','Total.5','Total.6','Total.7']]
-data["Main Total"]=df3.sum(axis=1)
-data = data.dropna()
-data.reset_index(drop=True)
-compSub()
-Compavg()
+def Total():
+	data=pd.read_csv("output11cs.csv")
+	df3=data[['Total','Total.1','Total.2','Total.3','Total.4','Total.5','Total.6','Total.7']]
+	data["Main Total"]=df3.sum(axis=1)
+	data = data.dropna()
+	data.reset_index(drop=True)
+	return data
+
+#compSub()
+#Compavg()
