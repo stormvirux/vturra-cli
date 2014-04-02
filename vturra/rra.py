@@ -29,7 +29,8 @@ import asys
 import glob
 import os
 import sys
-import sys 
+import sys
+import shutil 
 def inputIndex():
 	import codecs
 	x=0
@@ -110,11 +111,14 @@ def ret():
 
 def main():
 	inputIndex()
+	if not os.path.exists("results"):
+		os.makedirs("results")
 	ret()
 	parsehtml()
 	getval()
 	asys.Compavg()
 	asys.compSub()
+	shutil.rmtree('results')
 	return 0
 
 
