@@ -25,9 +25,9 @@ setup(name="vturra",
                       'BeautifulSoup4',
                       'numpy',
                       'scipy',
-                      'seaborn==0.2.1',
                       'matplotlib>=1.2.1',
-                      'pandas<0.13'
+                      'pandas<0.13',
+                      'seaborn==0.2.1'
                      ],
     cmdclass={'test': PyTest},
     description="Downloads results from VTU website and analyzes the result",
