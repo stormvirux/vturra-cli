@@ -8,9 +8,9 @@ from scipy import stats
 #import statsmodels.api as sm
 from numpy.random import randn
 import matplotlib as mpl
-import seaborn as sns
+#import seaborn as sns
 
-sns.set_color_palette("deep", desat=.6)
+#sns.set_color_palette("deep", desat=.6)
 mpl.rc("figure", figsize=(8, 4))
 
 def Compavg():
