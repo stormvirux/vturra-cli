@@ -27,9 +27,7 @@ setup(name="vturra",
                       'beautifulsoup',
                       'requests',
                       'patsy',
-                      'BeautifulSoup4',
-                      'tornado',
-                      'statsmodels'
+                      'BeautifulSoup4'
                      ],
     cmdclass={'test': PyTest},
     description="Downloads results from VTU website and analyzes the result",
