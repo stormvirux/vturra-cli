@@ -4,6 +4,7 @@ python:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install libatlas-base-dev liblapack-dev gfortran
-script: 
+script:
+  - pip install -e .
   - python setup.py install 
   - vturra 11 cs
