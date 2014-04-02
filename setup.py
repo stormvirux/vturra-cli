@@ -17,7 +17,7 @@ class PyTest(TestCommand):
 
 setup(name="vturra",
     version=vturra.__version__,
-    license='Apache Software License',
+    license='MIT Software License',
     tests_require=['pytest'],
     install_requires=[
                       'requests',
@@ -41,13 +41,13 @@ setup(name="vturra",
     test_suite='vturra.test.test_vturra',
     classifiers = [
         'Programming Language :: Python',
-        'Development Status :: 1 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Natural Language :: English',
-        'Environment :: Web Environment',
+        'Environment :: Console',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        'Topic :: Scientific/Engineering :: Information Analysis'
         ],
     extras_require={
         'testing': ['pytest'],
