@@ -99,7 +99,7 @@ def ret():
 	x=0
 	year=sys.argv[1]
 	branches=sys.argv[2]
-	for rno in range(1,12):
+	for rno in range(1,120):
 		usn="4pa"+year+branches+"%03d"%rno
 		payload={'rid':usn,'submit':'submit'}
 		r=requests.post("http://results.vtu.ac.in/vitavi.php/post",data=payload)
