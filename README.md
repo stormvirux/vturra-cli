@@ -9,9 +9,9 @@ Pre-Requesities
 ----------------
 The following packages should be installed using the operating system packet manager for `linux`. These packages are required for compiling and building `numpy` and `scipy`.
 
-- libatlas-base-dev 
-- liblapack-dev 
-- gfortran
+- `libatlas-base-dev` 
+- `liblapack-dev` 
+- `gfortran`
 
 For Windows `libatlas-base-dev` and `liblapack-dev` are available at [ATLAS](http://math-atlas.sourceforge.net/) and [LAPACK](http://www.netlib.org/lapack/) websites.You can follow this [guide](http://icl.cs.utk.edu/lapack-for-windows/lapack/#running).
 
