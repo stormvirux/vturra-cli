@@ -26,8 +26,7 @@ setup(name="vturra",
                       'numpy',
                       'scipy',
                       'matplotlib>=1.2.1',
-                      'pandas<0.13',
-                      'seaborn==0.2.1'
+                      'pandas<0.13'
                      ],
     cmdclass={'test': PyTest},
     description="Downloads results from VTU website and analyzes the result",
