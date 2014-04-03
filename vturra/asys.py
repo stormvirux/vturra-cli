@@ -4,13 +4,13 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-#from scipy import stats
-#import statsmodels.api as sm
+# from scipy import stats
+# import statsmodels.api as sm
 from numpy.random import randn
 import matplotlib as mpl
-#import seaborn as sns
+# import seaborn as sns
 
-#sns.set_color_palette("deep", desat=.6)
+# sns.set_color_palette("deep", desat=.6)
 mpl.rc("figure", figsize=(8, 4))
 
 def Compavg():
@@ -38,8 +38,8 @@ def Compavg():
 	plt.show()
 	
 def compSub():
-	#max_data = np.r_[data["Total"]].max()
-	#bins = np.linspace(0, max_data, max_data + 1)
+	# max_data = np.r_[data["Total"]].max()
+	# bins = np.linspace(0, max_data, max_data + 1)
 	data=Total()
 	plt.hist(data['Total'],linewidth=0, alpha=.7)
 	plt.hist(data['Total.1'],linewidth=0,alpha=.7)
