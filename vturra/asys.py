@@ -4,7 +4,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy import stats
+#from scipy import stats
 #import statsmodels.api as sm
 from numpy.random import randn
 import matplotlib as mpl
@@ -59,5 +59,5 @@ def Total():
 	data.reset_index(drop=True)
 	return data
 
-#compSub()
-#Compavg()
+"""compSub()"""
+"""Compavg()"""

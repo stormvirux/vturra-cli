@@ -4,11 +4,9 @@
 usn=""
 usnl=[]
 from bs4 import BeautifulSoup 
-import re
 import asys
 import glob
 import os
-import sys
 import sys
 import shutil 
 def inputIndex():
@@ -24,7 +22,6 @@ def inputIndex():
 
 def getval():
 	import codecs
-	lol=[]
 	record=[]
 	x=0
 	while x<len(usnl):
@@ -52,12 +49,11 @@ def getval():
 			for y in record:
 				fl.write(y)
 				fl.write(",")	
-				#fl.write(lol[-10])
+				"""fl.write(lol[-10])"""
 			fl.close()
 		x+=1
 	
 def parsehtml():
-	records=[]
 	files=glob.glob("results/*.*")
 	print files.sort()
 	x=0
@@ -76,7 +72,6 @@ def parsehtml():
 		
 def ret():
 	import requests
-	x=0
 	year=sys.argv[1]
 	branches=sys.argv[2]
 	for rno in range(1,120):
@@ -108,4 +103,4 @@ if __name__ == '__main__':
 	asys.Compavg()
 	asys.compSub()
 
-#TODO:Names of those whose result has not come out
+"""TODO:Names of those whose result has not come out"""
