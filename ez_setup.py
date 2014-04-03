@@ -62,7 +62,7 @@ md5_data = {
     'setuptools-0.6c9-py2.6.egg': 'ca37b1ff16fa2ede6e19383e7b59245a',
 }
 
-import sys, os
+import os
 try: from hashlib import md5
 except ImportError: from md5 import md5
 
@@ -136,7 +136,7 @@ def download_setuptools(
     src = dst = None
     if not os.path.exists(saveto):  # Avoid repeated downloads
         try:
-            from distutils import log
+            import distutils.log
             if delay:
                 log.warn("""
 ---------------------------------------------------------------------------
