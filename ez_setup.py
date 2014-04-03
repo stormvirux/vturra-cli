@@ -136,7 +136,7 @@ def download_setuptools(
     src = dst = None
     if not os.path.exists(saveto):  # Avoid repeated downloads
         try:
-            import distutils.log
+            from distutils import log
             if delay:
                 log.warn("""
 ---------------------------------------------------------------------------
