@@ -49,7 +49,7 @@ def getval():
 			for y in record:
 				fl.write(y)
 				fl.write(",")	
-				"""fl.write(lol[-10])"""
+				# fl.write(lol[-10])
 			fl.close()
 		x+=1
 	
@@ -103,4 +103,4 @@ if __name__ == '__main__':
 	asys.Compavg()
 	asys.compSub()
 
-"""TODO:Names of those whose result has not come out"""
+# TODO:Names of those whose result has not come out
