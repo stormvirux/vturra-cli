@@ -106,6 +106,6 @@ if __name__ == '__main__':
 	inputIndex()
 	main()
 	asys.Compavg()
-    	asys.compSub()
+	asys.compSub()
 
 #TODO:Names of those whose result has not come out
