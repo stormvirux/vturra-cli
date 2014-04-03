@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # from scipy import stats
 # import statsmodels.api as sm
-from numpy.random import randn
+# from numpy.random import randn
 import matplotlib as mpl
 # import seaborn as sns
 

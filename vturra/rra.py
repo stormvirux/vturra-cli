@@ -48,7 +48,7 @@ def getval():
 			fl.write("\n"+usnl[x]+",")
 			for y in record:
 				fl.write(y)
-				fl.write(",")	
+				fl.write(",")
 				# fl.write(lol[-10])
 			fl.close()
 		x+=1
