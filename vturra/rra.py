@@ -74,7 +74,7 @@ def ret():
 	import requests
 	year=sys.argv[1]
 	branches=sys.argv[2]
-	for rno in range(1,120):
+	for rno in range(1,12):
 		usn="4pa"+year+branches+"%03d"%rno
 		payload={'rid':usn,'submit':'submit'}
 		r=requests.post("http://results.vtu.ac.in/vitavi.php/post",data=payload)
@@ -91,8 +91,18 @@ def main():
 	ret()
 	parsehtml()
 	getval()
-	asys.Compavg()
-	asys.compSub()
+	while True:
+		print("""1.Compute average
+2.Compare with max and average
+3.Quit""")
+		sel=raw_input("Select an Analysis\n")
+		if sel=="1":
+			asys.Compavg()
+		elif sel=='2':
+			asys.compSub()
+		elif sel=='3':
+			print("Exiting")
+			break
 	shutil.rmtree('results')
 	return 0
 
