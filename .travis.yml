@@ -4,6 +4,7 @@ python:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install libatlas-base-dev liblapack-dev gfortran
+  - export DEBIAN_FRONTEND=noninteractive
 script:
   - python setup.py install 
   - travis_wait vturra 11 cs
