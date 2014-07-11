@@ -76,7 +76,7 @@ def ret():
 	branches=sys.argv[2]
 	for rno in range(1,12):
 		usn="4pa"+year+branches+"%03d"%rno
-		payload={'rid':usn,'submit':'submit'}
+		payload={'rid':usn,'submit':'submit','1f0a-B9BB_7e826562':'6f7d5f8af213626428d116e9dc1bd15f2ea75988'}
 		r=requests.post("http://results.vtu.ac.in/vitavi.php/post",data=payload)
 		fl=open("results/"+usn+".html","wb")
 		fl.write(r.text)
