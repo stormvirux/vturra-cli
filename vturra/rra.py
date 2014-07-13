@@ -4,13 +4,15 @@
 usn=""
 usnl=[]
 from bs4 import BeautifulSoup 
-import time
+import select
 import asys
 import glob
 import os
 import sys
 import shutil
-timeout = time.time() + 60*2  
+from select import select
+timeout=10
+
 def inputIndex():
 	import codecs
 	x=0
@@ -79,7 +81,7 @@ def ret():
 	year=sys.argv[1]
 	branches=sys.argv[2]
 	x=0
-	for rno in range(1,12):
+	for rno in range(1,3):
 		usn="4pa"+year+branches+"%03d"%rno
 		print usn
 		br = mechanize.Browser()
@@ -104,14 +106,17 @@ def main():
 	ret()
 	#parsehtml()
 	getval()
-	while True:
-		if time.time() > timeout:
-			print "timed out exiting"			
-			break		
+	while True:		
 		print("""1.Compute average
 2.Compare with max and average
 3.Quit""")
-		sel=raw_input("Select an Analysis\n")
+		rlist, _, _ = select([sys.stdin], [], [], timeout)		
+		if(rlist):
+			sel=sys.stdin.readline()
+		else:
+			print "Time out exiting"			
+			break		
+		#sel=raw_input("Select an Analysis\n")
 		if sel=="1":
 			asys.Compavg()
 		elif sel=='2':
