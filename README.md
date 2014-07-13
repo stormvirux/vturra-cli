@@ -1,6 +1,6 @@
 vturra-cli
 ==========
-[![Build Status](https://travis-ci.org/stormvirux/vturra.svg?branch=master)](https://travis-ci.org/stormvirux/vturra)     [![Dependency Status](https://gemnasium.com/stormvirux/vturra.png)](https://gemnasium.com/stormvirux/vturra)
+[![Build Status](https://travis-ci.org/stormvirux/vturra-cli.svg?branch=master)](https://travis-ci.org/stormvirux/vturra-cli)     [![Dependency Status](https://gemnasium.com/stormvirux/vturra.png)](https://gemnasium.com/stormvirux/vturra)
 [![Code Health](https://landscape.io/github/stormvirux/vturra/master/landscape.png)](https://landscape.io/github/stormvirux/vturra/master)
 
 
