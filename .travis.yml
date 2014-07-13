@@ -7,4 +7,4 @@ before_install:
   - export DEBIAN_FRONTEND=noninteractive
 script:
   - python setup.py install 
-  - travis_wait vturra 11 cs
+  - vturra 11 cs
