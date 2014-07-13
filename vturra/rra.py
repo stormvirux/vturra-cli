@@ -53,35 +53,46 @@ def getval():
 			fl.close()
 		x+=1
 	
-def parsehtml():
-	files=glob.glob("results/*.*")
-	print files.sort()
-	x=0
-	print files
-	for f in files:
-		page_html=open(f)
-		soup=BeautifulSoup(page_html)
-		all_tds = [td for td in soup.findAll("td", width="513")]
-		fl = open("results/"+usnl[x]+".html", 'wb')
-		lol=all_tds[0]
-		record = '%s' % (lol)
-		if record:
-			fl.write(record)
-		fl.close()
-		x=x+1
+def parsehtml(response,x):
+	#files=glob.glob("results/*.*")
+	#files.sort()
+	#x=0
+	#print files
+	#for f in files:
+	#page_html=open(f)
+	soup=BeautifulSoup(response.read())
+	all_tds = [td for td in soup.findAll("td", width="513")]
+	fl = open("results/"+usnl[x]+".html", 'wb')
+	lol=all_tds[0]
+	record = '%s' % (lol)
+	if record:
+		fl.write(record)
+	fl.close()
+	#x=x+1
 		
 def ret():
 	import requests
+	import shutil
+	import mechanize
 	year=sys.argv[1]
 	branches=sys.argv[2]
+	x=0
 	for rno in range(1,12):
 		usn="4pa"+year+branches+"%03d"%rno
-		payload={'rid':usn,'submit':'submit','1f0a-B9BB_7e826562':'6f7d5f8af213626428d116e9dc1bd15f2ea75988'}
-		r=requests.post("http://results.vtu.ac.in/vitavi.php/post",data=payload)
-		fl=open("results/"+usn+".html","wb")
-		fl.write(r.text)
-		fl.close()
+		print usn
+		br = mechanize.Browser()
+		br.set_handle_robots(False)
+		br.open("http://results.vtu.ac.in/")
+		#fl=open("results/"+usn+".html","wb")
+		br.select_form(nr=0)
+		br['rid']=usn
+		response=br.submit()
 		usnl.append(usn)
+		parsehtml(response,x)
+		x=x+1		
+		#shutil.copyfileobj(br.submit(),fl)		
+		#fl.close()
+		
 			
 
 def main():
@@ -89,7 +100,7 @@ def main():
 	if not os.path.exists("results"):
 		os.makedirs("results")
 	ret()
-	parsehtml()
+	#parsehtml()
 	getval()
 	while True:
 		print("""1.Compute average
@@ -110,7 +121,7 @@ def main():
 if __name__ == '__main__':
 	inputIndex()
 	main()
-	asys.Compavg()
-	asys.compSub()
+	#asys.Compavg()
+	#asys.compSub()
 
 # TODO:Names of those whose result has not come out

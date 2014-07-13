@@ -52,7 +52,7 @@ def compSub():
 	plt.show()
 
 def Total():
-	data=pd.read_csv("output11cs.csv")
+	data=pd.read_csv("output10cs.csv")
 	df3=data[['Total','Total.1','Total.2','Total.3','Total.4','Total.5','Total.6','Total.7']]
 	data["Main Total"]=df3.sum(axis=1)
 	data = data.dropna()
