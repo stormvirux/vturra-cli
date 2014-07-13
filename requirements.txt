@@ -1,4 +1,4 @@
-requests
+mechanize
 patsy
 BeautifulSoup4
 numpy
