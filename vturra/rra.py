@@ -4,11 +4,13 @@
 usn=""
 usnl=[]
 from bs4 import BeautifulSoup 
+import time
 import asys
 import glob
 import os
 import sys
-import shutil 
+import shutil
+timeout = time.time() + 60*2  
 def inputIndex():
 	import codecs
 	x=0
@@ -103,6 +105,9 @@ def main():
 	#parsehtml()
 	getval()
 	while True:
+		if time.time() > timeout:
+			print "timed out exiting"			
+			break		
 		print("""1.Compute average
 2.Compare with max and average
 3.Quit""")
