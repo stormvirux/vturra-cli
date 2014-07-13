@@ -59,5 +59,5 @@ def Total():
 	data.reset_index(drop=True)
 	return data
 
-# compSub()
+#compSub()
 # Compavg()
