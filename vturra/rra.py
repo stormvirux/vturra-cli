@@ -75,7 +75,6 @@ def parsehtml(response,x):
 	#x=x+1
 		
 def ret():
-	import requests
 	import shutil
 	import mechanize
 	year=sys.argv[1]
