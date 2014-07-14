@@ -4,6 +4,14 @@ from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 import vturra
 import sys
+import codecs
+try:
+	codecs.lookup('mbcs')
+except LookupError:
+	ascii = codecs.lookup('ascii')
+	func = lambda name, enc=ascii: {True: enc}.get(name=='mbcs')
+	codecs.register(func) 
+
 class PyTest(TestCommand):
     def finalize_options(self):
         TestCommand.finalize_options(self)
@@ -20,7 +28,7 @@ setup(name="vturra",
     license='MIT Software License',
     tests_require=['pytest'],
     install_requires=[
-                      'requests',
+                      'mechanize',
                       'patsy',
                       'BeautifulSoup4',
                       'numpy',
