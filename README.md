@@ -1,7 +1,7 @@
 vturra-cli
 ==========
 [![Build Status](https://travis-ci.org/stormvirux/vturra-cli.svg?branch=master)](https://travis-ci.org/stormvirux/vturra-cli)     [![Dependency Status](https://gemnasium.com/stormvirux/vturra.png)](https://gemnasium.com/stormvirux/vturra)
-[![Code Health][![Code Health](https://landscape.io/github/stormvirux/vturra-cli/master/landscape.svg?style=flat)](https://landscape.io/github/stormvirux/vturra-cli/master)
+[![Code Health](https://landscape.io/github/stormvirux/vturra-cli/master/landscape.svg?style=flat)](https://landscape.io/github/stormvirux/vturra-cli/master)
 
 
 Command line Interface for vturra that retrieves result from vtu and analyzes it.
